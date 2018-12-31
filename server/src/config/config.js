@@ -13,3 +13,5 @@ var configuration = {
     }
   }
 };
+
+export { configuration };
