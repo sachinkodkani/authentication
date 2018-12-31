@@ -2,7 +2,7 @@
   "name": "server",
   "version": "1.0.0",
   "description": "Backend implementation using frameworks such as Node, Express, GraphQL and MongoDB",
-  "main": "server.js",
+  "main": "src/server.js",
   "scripts": {
     "start": "nodemon --exec babel-node  src/server.js",
     "build": "babel src --out-dir dist",
