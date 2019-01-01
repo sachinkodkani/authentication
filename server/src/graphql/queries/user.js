@@ -4,6 +4,7 @@ export const typeDef = `
     
     extend type Query {
         user(userName : String!) : User
+        users : [User]
     }
 
     type User {
@@ -19,12 +20,22 @@ export const typeDef = `
 `;
 
 export const resolvers = {
-    Query: {
-      user: function(root, { userName }) {
-        UserModel.find({ userName: userName }, function(err, user) {
-          if (err) return console.error(err);
-          return user;
-        });
-      }
+  Query: {
+    
+    user: async function(root, { userName }) {
+      return await UserModel.findOne({ userName: userName });
+    },
+
+    users: async function() {
+      return await UserModel.find();
     }
-  };
+  }
+};
+
+/*export const resolvers = {
+  Query: {
+    user: async function(root, { id }) {
+      return await UserModel.findById(id);
+    }
+  }
+};*/
