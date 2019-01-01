@@ -31,11 +31,3 @@ export const resolvers = {
     }
   }
 };
-
-/*export const resolvers = {
-  Query: {
-    user: async function(root, { id }) {
-      return await UserModel.findById(id);
-    }
-  }
-};*/
