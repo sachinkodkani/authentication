@@ -12,7 +12,7 @@ const Query = `
 const resolvers = {};
 
 var schema = makeExecutableSchema({
-  typeDefs: { Query, User },
+  typeDefs: [ Query, User ],
   resolvers: merge(resolvers, userResolver)
 });
 

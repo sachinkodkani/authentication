@@ -1,9 +1,9 @@
-import {UserModel} from '../../models/user';
+import { UserModel } from "../../models/user";
 
 export const typeDef = `
     
     extend type Query {
-        user(userName : String!)   
+        user(userName : String!) : User
     }
 
     type User {
