@@ -12,9 +12,11 @@ var userSchema = new Schema({
     type : String,
     required : true
 },
-  avatar: String
+  avatar: String,
+  isAdmin : Boolean,
+  isActive : Boolean
 });
 
-var UserModel = mongoose.model("User", userSchema);
+var UserModel = mongoose.model("user", userSchema);
 
 export { UserModel };
