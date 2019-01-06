@@ -9,11 +9,12 @@ export const typeDef = `
 
     type User {
         userName : String!
+        password : String!
         email : String!
         firstName : String
         lastName : String
         avatar : String 
-        isAdmin : Boolean
+        level : String
         isActive : Boolean
     }
 

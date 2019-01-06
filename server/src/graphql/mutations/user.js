@@ -8,11 +8,12 @@ export const typeDef = `
 
     input UserInput {
         userName : String!
+        password : String!
         email : String!
         firstName : String
         lastName : String
         isActive : Boolean
-        isAdmin : Boolean
+        level : String
         avatar : String
     }
 
