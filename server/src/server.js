@@ -1,7 +1,11 @@
 import express from "express";
 import { database } from "./config/mongooseConfig";
-import graphqlHTTP from "express-graphql";
+import { apolloExpress, graphiqlExpress } from "apollo-server";
 import { schema } from "./graphql/index";
+import { bodyParser } from "body-parser";
+
+//commented for apollo-server usage as server
+//import graphqlHTTP from "express-graphql";
 
 const port = process.env.port || 4000;
 
@@ -11,12 +15,16 @@ var db = database();
 var app = express();
 
 app.use(
-    "/graphql",
-    graphqlHTTP({
-      schema: schema,
-      graphiql: true
-    })
-  );
+  "/graphql",
+  bodyParser.json(),
+  apolloExpress({
+    schema: schema
+  })
+);
+
+app.use('/graphiql', graphiqlExpress({
+  endpointURL: '/graphql',
+}));
 
 app.listen(port, () => {
   console.log("Info : Server listening at port : " + port);
