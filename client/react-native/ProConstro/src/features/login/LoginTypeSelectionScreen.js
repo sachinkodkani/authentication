@@ -4,6 +4,7 @@ import {
   heightPercentageToDP
 } from "react-native-responsive-screen";
 import styled from "styled-components/native";
+import images from 'res/images';
 
 export default class LoginTypeSelectionScreen extends React.Component {
   render() {
